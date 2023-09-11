@@ -67,6 +67,9 @@ jobs:
   notificar: 
     runs-on: ubuntu-latest
 
+    env: 
+      EMAIL_LIST: eduardocostar03@gmail.com # Variavel de ambiente
+
     steps:
     - name: Executa comandos
       uses: actions/checkout@v3
