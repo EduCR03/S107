@@ -27,10 +27,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Teste with Maven
       run: |
         cd Aula-GitHub-Actions
         mvn clean test site
+
+    - name: Upload de artefatos
+      uses: actions/upload-artifact@v3
+      with:
+          name: relatorio-testes
+          path: Aula-GitHub-Actions/target/site/ # Nao preciso subir essa pasta pois qnd eu rodo o comando MVN clean test site a pasta foi criada
 
   empacotar:
 
@@ -49,3 +55,5 @@ jobs:
         run: |
           cd Aula-GitHub-Actions
           mvn clean install
+
+    
